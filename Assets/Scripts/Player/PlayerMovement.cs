@@ -115,7 +115,7 @@ public class PlayerController : MonoBehaviour
 
     private void Flip()
     {
-        if (!isOnSlipperySurface && gI.valueX * direction < 0)
+        if (grounded && !isOnSlipperySurface && gI.valueX * direction < 0)
         {
             direction *= -1;
             float rotationY = direction == 1 ? 0f : 180f;

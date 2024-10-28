@@ -19,9 +19,10 @@ public class CameraSwitcher : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        // Sprawdzamy, czy obiekt ma tag "PlayerCameraTrigger"
+        if (other.CompareTag("PlayerCameraTrigger"))
         {
-            if (playerRb == null) playerRb = other.GetComponent<Rigidbody2D>();
+            if (playerRb == null) playerRb = other.GetComponentInParent<Rigidbody2D>();
 
             if (playerRb != null)
             {
@@ -33,7 +34,7 @@ public class CameraSwitcher : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("PlayerCameraTrigger"))
         {
             playerInsideTrigger = false;
         }

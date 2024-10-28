@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Slippery
+  - PlayerCameraTrigger
   layers:
   - Default
   - TransparentFX
