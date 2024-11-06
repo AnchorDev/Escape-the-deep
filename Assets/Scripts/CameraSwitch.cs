@@ -12,14 +12,25 @@ public class CameraSwitcher : MonoBehaviour
 
     private bool playerInsideTrigger = false;
 
+    private SaveManager saveManager;
+
     void Start()
     {
         virtualCamera = FindObjectOfType<CinemachineVirtualCamera>();
+        saveManager = FindObjectOfType<SaveManager>();
+
+        if (playerRb != null && playerRb.velocity.y >= 0)
+        {
+            SwitchCameraPosition(nextCameraPositionUp);
+        }
+        else
+        {
+            SwitchCameraPosition(nextCameraPositionDown);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Sprawdzamy, czy obiekt ma tag "PlayerCameraTrigger"
         if (other.CompareTag("PlayerCameraTrigger"))
         {
             if (playerRb == null) playerRb = other.GetComponentInParent<Rigidbody2D>();
@@ -69,6 +80,10 @@ public class CameraSwitcher : MonoBehaviour
                 newCameraPosition.position.y,
                 virtualCamera.transform.position.z
             );
+        }
+        if (saveManager != null)
+        {
+            saveManager.UpdateCameraSavePosition(virtualCamera.transform.position);
         }
     }
 }
