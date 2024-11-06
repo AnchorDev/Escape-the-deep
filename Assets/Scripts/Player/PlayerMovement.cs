@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -36,6 +37,9 @@ public class PlayerController : MonoBehaviour
     private bool isOnSlipperySurface = false;
     private Vector3 originalScale;
 
+    private float resetTime = 2f;
+    private float holdCounter = 0;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -51,9 +55,28 @@ public class PlayerController : MonoBehaviour
         PlayerJump();
         CheckStatus();
         PlayerMove();
+        RestartGame();
     }
 
-    private void PlayerMove()
+    private void RestartGame()
+    {
+        if (Input.GetKey(KeyCode.R))
+        {
+            holdCounter += Time.deltaTime;
+
+            if (holdCounter >= resetTime)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                holdCounter = 0f;
+            }
+        }
+        else
+        {
+            holdCounter = 0f;
+        }
+    }
+
+private void PlayerMove()
     {
         if (!isOnSlipperySurface && jumpForce == 0.0f && grounded)
         {
