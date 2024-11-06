@@ -15,10 +15,12 @@ public class PauseMenuMenager : MonoBehaviour
             if (pauseMenuPanel.activeSelf)
             {
                 pauseMenuPanel.SetActive(false);
+                Time.timeScale = 1f;
             }
             else
             {
                 pauseMenuPanel.SetActive(true);
+                Time.timeScale = 0f;
             }
         }
     }
