@@ -24,9 +24,15 @@ public class PlayerController : MonoBehaviour
     public PhysicsMaterial2D normalMat;
     public PhysicsMaterial2D slipperyMat;
 
+    [Space(3)]
+    [Header("Sprites")]
+    public Sprite idleSprite;
+    public Sprite chargingSprite;
+
     private Rigidbody2D rb;
     private GatherInput gI;
 
+    private SpriteRenderer spriteRenderer;
     private bool isOnSlipperySurface = false;
     private Vector3 originalScale;
 
@@ -34,6 +40,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         gI = GetComponent<GatherInput>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         originalScale = transform.localScale;
     }
@@ -62,6 +69,8 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(0.0f, rb.velocity.y);
             rb.sharedMaterial = bounceMat;
             preJump = true;
+
+            spriteRenderer.sprite = chargingSprite;
         }
         else
         {
@@ -74,6 +83,8 @@ public class PlayerController : MonoBehaviour
             float tempY = jumpForce;
             rb.velocity = new Vector2(tempX, tempY);
             Invoke("ResetJump", 0.025f);
+
+            spriteRenderer.sprite = idleSprite;
         }
 
         if (rb.velocity.y <= -1)
