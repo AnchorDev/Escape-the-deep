@@ -2495,7 +2495,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -3000,6 +3000,8 @@ MonoBehaviour:
   bounceMat: {fileID: 6200000, guid: f54000cc6587b6249bf7a22dd0c97236, type: 2}
   normalMat: {fileID: 6200000, guid: b18cc43599025fb4083b12db00d112be, type: 2}
   slipperyMat: {fileID: 6200000, guid: 2ef61417b0ece1d4f835695b7201ceff, type: 2}
+  idleSprite: {fileID: 21300000, guid: c00d097b56cb7d3438f4d9da31acca25, type: 3}
+  chargingSprite: {fileID: 21300000, guid: 0611e90c2bb07a640a6d505a16348c10, type: 3}
 --- !u!50 &1370382547
 Rigidbody2D:
   serializedVersion: 4
