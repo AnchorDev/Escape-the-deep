@@ -11,14 +11,29 @@ public class MovingPlatform : MonoBehaviour
     private Vector3 targetPosition;
     private bool movingToPointB = true;
 
+    private SpriteRenderer spriteRenderer;
+    private Animator animator;
+
     void Start()
     {
         targetPosition = pointB.position;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+
+        if (spriteRenderer == null)
+        {
+            Debug.LogWarning("SpriteRenderer not found! Please attach a SpriteRenderer component to the platform.");
+        }
+        if (animator == null)
+        {
+            Debug.LogWarning("Animator not found! Please attach an Animator component to the platform.");
+        }
     }
 
     void Update()
     {
         MovePlatform();
+        UpdateSpriteDirection();
     }
 
     void MovePlatform()
@@ -36,6 +51,21 @@ public class MovingPlatform : MonoBehaviour
             {
                 targetPosition = pointB.position;
                 movingToPointB = true;
+            }
+        }
+    }
+
+    void UpdateSpriteDirection()
+    {
+        if (spriteRenderer != null)
+        {
+            if (targetPosition.x > transform.position.x)
+            {
+                spriteRenderer.flipX = false;
+            }
+            else
+            {
+                spriteRenderer.flipX = true;
             }
         }
     }

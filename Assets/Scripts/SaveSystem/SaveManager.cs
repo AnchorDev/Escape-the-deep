@@ -22,7 +22,6 @@ public class SaveManager : MonoBehaviour
     {
         PlayerPrefs.SetFloat("PlayerPositionX", playerTransform.position.x);
         PlayerPrefs.SetFloat("PlayerPositionY", playerTransform.position.y);
-        PlayerPrefs.SetFloat("PlayerPositionZ", playerTransform.position.z);
 
         PlayerPrefs.SetFloat("CameraPosX", cameraSavePosition.x);
         PlayerPrefs.SetFloat("CameraPosY", cameraSavePosition.y);
@@ -31,7 +30,7 @@ public class SaveManager : MonoBehaviour
         timer.SaveElapsedTime();
 
         PlayerPrefs.Save();
-        Debug.Log("Gra zapisana!");
+        Debug.Log("Game saved!");
     }
 
     public void LoadGame()
@@ -47,11 +46,11 @@ public class SaveManager : MonoBehaviour
             float cameraPosZ = PlayerPrefs.GetFloat("CameraPosZ");
             FindObjectOfType<CinemachineVirtualCamera>().transform.position = new Vector3(cameraPosX, cameraPosY, cameraPosZ);
 
-            Debug.Log("Gra wczytana!");
+            Debug.Log("Game loaded!");
         }
         else
         {
-            Debug.LogWarning("Brak zapisanego stanu gry.");
+            Debug.LogWarning("No saved game.");
         }
     }
 
