@@ -80,9 +80,19 @@ public class MovingPlatform : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        Debug.Log($"OnCollisionExit2D: {collision.gameObject.name} leaving {this.gameObject.name}");
+
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.transform.SetParent(null);
+            if (collision.transform.parent == this.transform)
+            {
+                collision.transform.SetParent(null);
+                Debug.Log("Parent set to null");
+            }
+            else
+            {
+                Debug.LogWarning("Player was not parented to platform");
+            }
         }
     }
 }
