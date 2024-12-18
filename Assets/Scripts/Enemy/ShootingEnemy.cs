@@ -25,19 +25,14 @@ public class ShootingEnemy : MonoBehaviour
         while (true)
         {
             if (animator != null)
-            {
                 animator.SetBool("IsShooting", true);
-                IsShooting = true;
-            }
 
             yield return new WaitForSeconds(0.1f);
 
             Shoot();
 
-            if (animator != null) {
+            if (animator != null)
             animator.SetBool("IsShooting", false);
-                IsShooting = false;
-            }
 
             yield return new WaitForSeconds(shootInterval);
         }
