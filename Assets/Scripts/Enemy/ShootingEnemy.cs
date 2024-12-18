@@ -7,7 +7,6 @@ public class ShootingEnemy : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform shootPoint;
     public float shootInterval = 2f;
-    private bool IsShooting = false;
 
     private Animator animator;
     private SpriteRenderer spriteRenderer;

@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour
         CheckStatus();
         PlayerMove();
         RestartGame();
+        //Debug.Log("Spadanie, materiał zmieniony na: " + rb.velocity);
     }
 
     private void RestartGame()
