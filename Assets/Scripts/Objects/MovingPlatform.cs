@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
+    [Header("Platform Points")]
     public Transform pointA;
     public Transform pointB;
+
+    [Header("Movement Settings")]
+    [Tooltip("Prędkość poruszania się platformy.")]
     public float speed = 2.0f;
 
     private Vector3 targetPosition;
     private bool movingToPointB = true;
 
+    // Komponenty pomocnicze
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
     void Start()
     {
         targetPosition = pointB.position;
+
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
 
@@ -59,14 +65,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (spriteRenderer != null)
         {
-            if (targetPosition.x > transform.position.x)
-            {
-                spriteRenderer.flipX = false;
-            }
-            else
-            {
-                spriteRenderer.flipX = true;
-            }
+            spriteRenderer.flipX = targetPosition.x < transform.position.x;
         }
     }
 
