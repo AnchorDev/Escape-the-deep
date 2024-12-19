@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     public Transform checkPointLeft;
     public Transform checkPointRight;
+    public Transform checkPointMiddle; 
 
     [Space(3)]
     [Header("Materials")]
@@ -56,7 +57,6 @@ public class PlayerController : MonoBehaviour
         CheckStatus();
         PlayerMove();
         RestartGame();
-        //Debug.Log("Spadanie, materiał zmieniony na: " + rb.velocity);
     }
 
     private void RestartGame()
@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-private void PlayerMove()
+    private void PlayerMove()
     {
         if (!isOnSlipperySurface && jumpForce == 0.0f && grounded)
         {
@@ -126,8 +126,9 @@ private void PlayerMove()
     {
         RaycastHit2D leftCheckHit = Physics2D.Raycast(checkPointLeft.position, Vector2.down, rayLength, groundLayer);
         RaycastHit2D rightCheckHit = Physics2D.Raycast(checkPointRight.position, Vector2.down, rayLength, groundLayer);
+        RaycastHit2D centerCheckHit = Physics2D.Raycast(checkPointMiddle.position, Vector2.down, rayLength, groundLayer);
 
-        if (leftCheckHit || rightCheckHit)
+        if (leftCheckHit || rightCheckHit || centerCheckHit)
         {
             grounded = true;
         }
@@ -136,16 +137,18 @@ private void PlayerMove()
             grounded = false;
         }
 
-        SeeRays(leftCheckHit, rightCheckHit);
+        SeeRays(leftCheckHit, rightCheckHit, centerCheckHit);
     }
 
-    private void SeeRays(RaycastHit2D leftCheckHit, RaycastHit2D rightCheckHit)
+    private void SeeRays(RaycastHit2D leftCheckHit, RaycastHit2D rightCheckHit, RaycastHit2D centerCheckHit)
     {
         Color color1 = leftCheckHit ? Color.green : Color.red;
         Color color2 = rightCheckHit ? Color.green : Color.red;
+        Color color3 = centerCheckHit ? Color.green : Color.red;
 
         Debug.DrawRay(checkPointLeft.position, Vector2.down * rayLength, color1);
         Debug.DrawRay(checkPointRight.position, Vector2.down * rayLength, color2);
+        Debug.DrawRay(checkPointMiddle.position, Vector2.down * rayLength, color3);
     }
 
     private void Flip()

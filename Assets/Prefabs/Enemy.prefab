@@ -95,7 +95,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4403603588049817423}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -145,9 +145,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 778cbaae2c319544d940fff6aff5173f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1651886180268105212, guid: 6a3b7eb1f9214bd48a37480051fdc55c, type: 3}
+  bulletPrefab: {fileID: 1651886180268105212, guid: 2d6b797f185899840aa33af5af5c33a8, type: 3}
   shootPoint: {fileID: 1612187758928462931}
   shootInterval: 2
+  shootingAnimationDuration: 0.5
 --- !u!95 &2176002852418653178
 Animator:
   serializedVersion: 5

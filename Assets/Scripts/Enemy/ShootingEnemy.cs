@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class ShootingEnemy : MonoBehaviour
@@ -7,6 +7,9 @@ public class ShootingEnemy : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform shootPoint;
     public float shootInterval = 2f;
+
+    [Header("Animation Settings")]
+    public float shootingAnimationDuration = 0.5f;
 
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -26,14 +29,14 @@ public class ShootingEnemy : MonoBehaviour
             if (animator != null)
                 animator.SetBool("IsShooting", true);
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(shootingAnimationDuration);
 
             Shoot();
 
             if (animator != null)
-            animator.SetBool("IsShooting", false);
+                animator.SetBool("IsShooting", false);
 
-            yield return new WaitForSeconds(shootInterval);
+            yield return new WaitForSeconds(shootInterval - shootingAnimationDuration);
         }
     }
 
