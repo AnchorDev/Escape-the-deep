@@ -50,7 +50,9 @@ public class SaveManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No saved game.");
+            playerTransform.position = new Vector3(1.88f, 0f, 0f);
+            FindObjectOfType<CinemachineVirtualCamera>().transform.position = new Vector3(0f, 4.5f, -10f);
+            Debug.Log("No save data found. Setting default positions.");
         }
     }
 

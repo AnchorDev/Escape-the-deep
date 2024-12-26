@@ -1,3 +1,4 @@
+using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,6 +19,24 @@ public class MenuManager : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         SceneManager.LoadSceneAsync(1);
+        StartCoroutine(InitializeNewGame());
+    }
+
+    private IEnumerator InitializeNewGame()
+    {
+        yield return new WaitForSeconds(0.1f);
+        var player = GameObject.FindWithTag("Player");
+        var camera = FindObjectOfType<CinemachineVirtualCamera>();
+
+        if (player != null)
+        {
+            player.transform.position = new Vector3(1.88f, 0f, 0f);
+        }
+
+        if (camera != null)
+        {
+            camera.transform.position = new Vector3(0f, 4.5f, -10f);
+        }
     }
 
     public void LoadGame()

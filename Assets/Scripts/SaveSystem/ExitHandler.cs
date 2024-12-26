@@ -19,7 +19,11 @@ public class ExitHandler : MonoBehaviour
             saveManager.SaveGame();
         }
 
-        Application.Quit();
-        Debug.Log("Game exited");
+#if UNITY_EDITOR
+        Debug.Log("Application.Quit() symulowane w edytorze Unity.");
+#else
+    Application.Quit();
+#endif
     }
+
 }
