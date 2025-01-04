@@ -37,4 +37,11 @@ public class Timer : MonoBehaviour
     {
         PlayerPrefs.SetFloat("ElapsedTime", elapsedTime);
     }
+
+    public string GetFormattedTime()
+    {
+        int minutes = Mathf.FloorToInt(elapsedTime / 60);
+        int seconds = Mathf.FloorToInt(elapsedTime % 60);
+        return string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
 }
