@@ -18,8 +18,8 @@ public class PauseMenuManager : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetKeyUp(KeyCode.Escape))
-        if (Input.GetKeyUp(KeyCode.P))
+        //if (Input.GetKeyUp(KeyCode.P))
+        if (Input.GetKeyUp(KeyCode.Escape))
         {
             if (pauseMenuPanel.activeSelf)
             {

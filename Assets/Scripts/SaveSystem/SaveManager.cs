@@ -56,6 +56,7 @@ public class SaveManager : MonoBehaviour
         }
     }
 
+
     public void UpdateCameraSavePosition(Vector3 newCameraPosition)
     {
         cameraSavePosition = newCameraPosition;

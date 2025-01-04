@@ -25,6 +25,7 @@ public class MenuManager : MonoBehaviour
     private IEnumerator InitializeNewGame()
     {
         yield return new WaitForSeconds(0.1f);
+
         var player = GameObject.FindWithTag("Player");
         var camera = FindObjectOfType<CinemachineVirtualCamera>();
 
@@ -36,6 +37,12 @@ public class MenuManager : MonoBehaviour
         if (camera != null)
         {
             camera.transform.position = new Vector3(0f, 4.5f, -10f);
+        }
+
+        var saveManager = FindObjectOfType<SaveManager>();
+        if (saveManager != null)
+        {
+            saveManager.UpdateCameraSavePosition(camera.transform.position);
         }
     }
 

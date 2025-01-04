@@ -59,12 +59,4 @@ public class GatherInput : MonoBehaviour
     {
         jumpInput = false;
     }
-
-    private void Update()
-    {
-        if (Keyboard.current.escapeKey.isPressed)
-        {
-            Application.Quit();
-        }
-    }
 }
