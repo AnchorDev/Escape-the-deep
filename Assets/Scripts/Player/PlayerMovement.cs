@@ -41,6 +41,11 @@ public class PlayerController : MonoBehaviour
     private float resetTime = 2f;
     private float holdCounter = 0;
 
+    private float jumpStartHeight;
+    private bool hasPlayedFallSound = false;
+    private bool hasPlayedJumpSound = false;
+    private bool hasPlayedNormalFallSound = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -56,6 +61,7 @@ public class PlayerController : MonoBehaviour
         PlayerJump();
         CheckStatus();
         PlayerMove();
+        CheckFall();
         RestartGame();
     }
 
@@ -89,6 +95,8 @@ public class PlayerController : MonoBehaviour
     {
         if (gI.jumpInput && grounded && !isOnSlipperySurface)
         {
+            jumpStartHeight = transform.position.y;
+
             jumpForce += 0.45f;
             rb.velocity = new Vector2(0.0f, rb.velocity.y);
             rb.sharedMaterial = bounceMat;
@@ -109,6 +117,12 @@ public class PlayerController : MonoBehaviour
             Invoke("ResetJump", 0.025f);
 
             spriteRenderer.sprite = idleSprite;
+
+            if (!hasPlayedJumpSound)
+            {
+                AudioManager.instance.PlaySound("Jump");
+                hasPlayedJumpSound = true;
+            }
         }
 
         if (rb.velocity.y <= -1)
@@ -120,6 +134,7 @@ public class PlayerController : MonoBehaviour
     private void ResetJump()
     {
         jumpForce = 0.0f;
+        hasPlayedJumpSound = false;
     }
 
     private void CheckStatus()
@@ -161,12 +176,46 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void CheckFall()
+    {
+        if (grounded)
+        {
+            if (transform.position.y < jumpStartHeight - 7.0f)
+            {
+                if (!hasPlayedFallSound)
+                {
+                    AudioManager.instance.PlaySound("FianlFall");
+                    hasPlayedFallSound = true;
+                }
+            }
+            else if (!hasPlayedNormalFallSound)
+            {
+                AudioManager.instance.PlaySound("NormalFall");
+                hasPlayedNormalFallSound = true;
+            }
+
+            jumpStartHeight = transform.position.y;
+        }
+        else
+        {
+            hasPlayedFallSound = false;
+            hasPlayedNormalFallSound = false;
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Slippery"))
         {
             isOnSlipperySurface = true;
             rb.sharedMaterial = slipperyMat;
+        }
+        else
+        {
+            if (collision.contacts[0].normal.x != 0)
+            {
+                AudioManager.instance.PlaySound("WallBounce");
+            }
         }
     }
 
