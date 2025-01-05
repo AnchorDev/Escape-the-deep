@@ -104,9 +104,10 @@ public class PlayerController : MonoBehaviour
 
             spriteRenderer.sprite = chargingSprite;
         }
-        else
+        else if (!grounded)
         {
-            preJump = false;
+            ResetJump();
+            spriteRenderer.sprite = idleSprite;
         }
 
         if (gI.jumpInput && grounded && jumpForce >= 15.0f || gI.jumpInput == false && jumpForce >= 0.1f)
