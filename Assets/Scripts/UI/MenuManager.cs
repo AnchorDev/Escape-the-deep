@@ -1,20 +1,30 @@
 using Cinemachine;
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-
+    [SerializeField] private Button loadGameButton;
     private SaveManager saveManager;
     private ExitHandler exitHandler;
+
     private void Start()
     {
         saveManager = FindObjectOfType<SaveManager>();
         exitHandler = FindObjectOfType<ExitHandler>();
+
+        if (PlayerPrefs.HasKey("PlayerPositionX"))
+        {
+            loadGameButton.gameObject.SetActive(true);
+        }
+        else
+        {
+            loadGameButton.gameObject.SetActive(false);
+        }
     }
+
     public void NewGame()
     {
         PlayerPrefs.DeleteAll();
