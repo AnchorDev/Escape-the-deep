@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class CameraSwitcher : MonoBehaviour
+public class CameraSwitch : MonoBehaviour
 {
     public Transform nextCameraPositionUp;
     public Transform nextCameraPositionDown;
@@ -29,7 +29,7 @@ public class CameraSwitcher : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("PlayerCameraTrigger"))
         {
@@ -43,7 +43,7 @@ public class CameraSwitcher : MonoBehaviour
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    public void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("PlayerCameraTrigger"))
         {

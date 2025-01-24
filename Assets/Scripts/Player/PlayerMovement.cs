@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     public Transform checkPointLeft;
     public Transform checkPointRight;
-    public Transform checkPointMiddle; 
+    public Transform checkPointMiddle;
 
     [Space(3)]
     [Header("Materials")]
@@ -30,23 +30,32 @@ public class PlayerController : MonoBehaviour
     [Header("Sprites")]
     public Sprite idleSprite;
     public Sprite chargingSprite;
+    public Sprite jumpingSprite;
+    public Sprite bouncingSprite;
+    public Sprite slidingSprite;
 
-    private Rigidbody2D rb;
+    public Sprite[] runningSprites;
+
+    public Rigidbody2D rb;
     private GatherInput gI;
 
-    private SpriteRenderer spriteRenderer;
-    private bool isOnSlipperySurface = false;
+    public SpriteRenderer spriteRenderer;
+    public bool isOnSlipperySurface = false;
     private Vector3 originalScale;
 
     private float resetTime = 2f;
     private float holdCounter = 0;
 
-    private float jumpStartHeight;
+    public float jumpStartHeight;
     private bool hasPlayedFallSound = false;
     private bool hasPlayedJumpSound = false;
     private bool hasPlayedNormalFallSound = false;
 
-    void Start()
+    private int runningFrameIndex = 0;
+    private float runningFrameTime = 0.1f;
+    private float runningTimer = 0f;
+
+    public void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         gI = GetComponent<GatherInput>();
@@ -55,14 +64,43 @@ public class PlayerController : MonoBehaviour
         originalScale = transform.localScale;
     }
 
-    private void FixedUpdate()
+    public void FixedUpdate()
     {
         Flip();
-        PlayerJump();
         CheckStatus();
+        UpdateSpriteState();
         PlayerMove();
+        PlayerJump();
         CheckFall();
         RestartGame();
+    }
+
+    private void UpdateSpriteState()
+    {
+        if (!grounded)
+        {
+            if (rb.velocity.y > 0)
+            {
+                spriteRenderer.sprite = jumpingSprite;
+            }
+            else
+            {
+                spriteRenderer.sprite = slidingSprite;
+            }
+        }
+        else if (isOnSlipperySurface)
+        {
+            spriteRenderer.sprite = slidingSprite;
+        }
+        else if (rb.velocity.x != 0)
+        {
+            AnimateRunning();
+        }
+        else
+        {
+            spriteRenderer.sprite = idleSprite;
+            runningTimer = 0f;
+        }
     }
 
     private void RestartGame()
@@ -83,7 +121,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void PlayerMove()
+    public void PlayerMove()
     {
         if (!isOnSlipperySurface && jumpForce == 0.0f && grounded)
         {
@@ -91,7 +129,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void PlayerJump()
+
+    private void AnimateRunning()
+    {
+        runningTimer += Time.deltaTime;
+        if (runningTimer >= runningFrameTime)
+        {
+            runningFrameIndex = (runningFrameIndex + 1) % runningSprites.Length;
+            spriteRenderer.sprite = runningSprites[runningFrameIndex];
+            runningTimer = 0f;
+        }
+    }
+
+    public void PlayerJump()
     {
         if (gI.jumpInput && grounded && !isOnSlipperySurface)
         {
@@ -107,7 +157,6 @@ public class PlayerController : MonoBehaviour
         else if (!grounded)
         {
             ResetJump();
-            spriteRenderer.sprite = idleSprite;
         }
 
         if (gI.jumpInput && grounded && jumpForce >= 15.0f || gI.jumpInput == false && jumpForce >= 0.1f)
@@ -117,7 +166,6 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(tempX, tempY);
             Invoke("ResetJump", 0.025f);
 
-            spriteRenderer.sprite = idleSprite;
 
             if (!hasPlayedJumpSound)
             {
@@ -132,7 +180,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void ResetJump()
+    public void ResetJump()
     {
         jumpForce = 0.0f;
         hasPlayedJumpSound = false;
@@ -210,12 +258,14 @@ public class PlayerController : MonoBehaviour
         {
             isOnSlipperySurface = true;
             rb.sharedMaterial = slipperyMat;
+            spriteRenderer.sprite = slidingSprite;
         }
         else
         {
             if (collision.contacts[0].normal.x != 0)
             {
                 AudioManager.instance.PlaySound("WallBounce");
+                spriteRenderer.sprite = bouncingSprite;
             }
         }
     }

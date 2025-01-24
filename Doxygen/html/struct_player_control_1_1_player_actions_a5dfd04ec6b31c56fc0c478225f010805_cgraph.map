@@ -1,0 +1,7 @@
+<map id="PlayerControl.PlayerActions.operator InputActionMap" name="PlayerControl.PlayerActions.operator InputActionMap">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,242,48"/>
+<area shape="rect" id="Node000002" href="$struct_player_control_1_1_player_actions.html#a744907f374a6fae820a79335f35a4029" title=" " alt="" coords="290,5,479,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="242,24,274,24,274,29,242,29"/>
+<area shape="rect" id="Node000003" href="$class_player_control.html#a90ca231f43cb3c3d6dc774571dc81699" title=" " alt="" coords="527,13,710,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="480,24,512,24,512,29,480,29"/>
+</map>

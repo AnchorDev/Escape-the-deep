@@ -8835,6 +8835,8 @@ MonoBehaviour:
   pointA: {fileID: 2010572474}
   pointB: {fileID: 1219082601}
   speed: 1.9
+  targetPosition: {x: 0, y: 0, z: 0}
+  movingToPointB: 1
 --- !u!61 &339974752
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12041,6 +12043,8 @@ MonoBehaviour:
   pointA: {fileID: 1054282989}
   pointB: {fileID: 770911070}
   speed: 0.8
+  targetPosition: {x: 0, y: 0, z: 0}
+  movingToPointB: 1
 --- !u!61 &481705291
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32622,7 +32626,7 @@ Transform:
   m_GameObject: {fileID: 855992430}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 89.5, z: 0}
+  m_LocalPosition: {x: 0, y: 89.14, z: 0}
   m_LocalScale: {x: 20, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -35460,6 +35464,8 @@ MonoBehaviour:
   pointA: {fileID: 1478999450}
   pointB: {fileID: 1118320991}
   speed: 2.5
+  targetPosition: {x: 0, y: 0, z: 0}
+  movingToPointB: 1
 --- !u!61 &930304269
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46262,6 +46268,8 @@ MonoBehaviour:
   pointA: {fileID: 1535266842}
   pointB: {fileID: 1827356694}
   speed: 0.8
+  targetPosition: {x: 0, y: 0, z: 0}
+  movingToPointB: 1
 --- !u!61 &1180471599
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -51199,6 +51207,8 @@ MonoBehaviour:
   pointA: {fileID: 531019784}
   pointB: {fileID: 218912091}
   speed: 2.1
+  targetPosition: {x: 0, y: 0, z: 0}
+  movingToPointB: 1
 --- !u!61 &1235063040
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -55296,8 +55306,20 @@ MonoBehaviour:
   bounceMat: {fileID: 6200000, guid: f54000cc6587b6249bf7a22dd0c97236, type: 2}
   normalMat: {fileID: 6200000, guid: b18cc43599025fb4083b12db00d112be, type: 2}
   slipperyMat: {fileID: 6200000, guid: 2ef61417b0ece1d4f835695b7201ceff, type: 2}
-  idleSprite: {fileID: 21300000, guid: c00d097b56cb7d3438f4d9da31acca25, type: 3}
-  chargingSprite: {fileID: 21300000, guid: 0611e90c2bb07a640a6d505a16348c10, type: 3}
+  idleSprite: {fileID: -49233745, guid: ae4ad5582b023854aa6aa5ef1bd9506a, type: 3}
+  chargingSprite: {fileID: 21300000, guid: d69b6bd6e0656a94fa78d45d2c8e240f, type: 3}
+  jumpingSprite: {fileID: 21300000, guid: 972b9151198ffc54980fca4583d84df1, type: 3}
+  bouncingSprite: {fileID: 21300000, guid: afba8dce7f9374c40a2efe74c8f07a72, type: 3}
+  slidingSprite: {fileID: 21300000, guid: d30f69e48762590499ef7a8e173900bc, type: 3}
+  runningSprites:
+  - {fileID: -49233745, guid: ae4ad5582b023854aa6aa5ef1bd9506a, type: 3}
+  - {fileID: 829545355, guid: ae4ad5582b023854aa6aa5ef1bd9506a, type: 3}
+  - {fileID: -257032358, guid: ae4ad5582b023854aa6aa5ef1bd9506a, type: 3}
+  - {fileID: 1145263270, guid: ae4ad5582b023854aa6aa5ef1bd9506a, type: 3}
+  rb: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  isOnSlipperySurface: 0
+  jumpStartHeight: 0
 --- !u!50 &1370382547
 Rigidbody2D:
   serializedVersion: 4
@@ -55361,7 +55383,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.92771083, y: 1.0180722}
+    oldSize: {x: 1.1566265, y: 1.0783132}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -55411,7 +55433,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c00d097b56cb7d3438f4d9da31acca25, type: 3}
+  m_Sprite: {fileID: -49233745, guid: ae4ad5582b023854aa6aa5ef1bd9506a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

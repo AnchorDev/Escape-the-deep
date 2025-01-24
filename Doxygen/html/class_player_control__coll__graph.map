@@ -1,0 +1,7 @@
+<map id="PlayerControl" name="PlayerControl">
+<area shape="rect" id="Node000001" title=" " alt="" coords="86,123,206,448"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,151,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,88,104,122,98,123,89,90"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="176,5,255,75"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="204,90,195,123,190,122,199,88"/>
+</map>

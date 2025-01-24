@@ -1,0 +1,7 @@
+<map id="PlayerControl.PlayerActions.Get" name="PlayerControl.PlayerActions.Get">
+<area shape="rect" id="Node000001" title=" " alt="" coords="243,47,453,73"/>
+<area shape="rect" id="Node000002" href="$struct_player_control_1_1_player_actions.html#ae8b7dcd9a059e0a7fafae1246ad6030b" title=" " alt="" coords="5,5,195,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="228,47,195,42,195,37,229,41"/>
+<area shape="rect" id="Node000003" href="$struct_player_control_1_1_player_actions.html#a2ed6ca2d411bdbf599d6eb908cfb1353" title=" " alt="" coords="5,72,195,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="229,79,195,83,195,78,228,73"/>
+</map>

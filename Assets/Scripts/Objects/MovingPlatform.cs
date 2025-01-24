@@ -12,10 +12,9 @@ public class MovingPlatform : MonoBehaviour
     [Tooltip("Prędkość poruszania się platformy.")]
     public float speed = 2.0f;
 
-    private Vector3 targetPosition;
-    private bool movingToPointB = true;
+    public Vector3 targetPosition;
+    public bool movingToPointB = true;
 
-    // Komponenty pomocnicze
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
@@ -36,7 +35,7 @@ public class MovingPlatform : MonoBehaviour
         }
     }
 
-    void Update()
+    public void Update()
     {
         MovePlatform();
         UpdateSpriteDirection();
@@ -69,7 +68,7 @@ public class MovingPlatform : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -77,7 +76,7 @@ public class MovingPlatform : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    public void OnCollisionExit2D(Collision2D collision)
     {
         Debug.Log($"OnCollisionExit2D: {collision.gameObject.name} leaving {this.gameObject.name}");
 

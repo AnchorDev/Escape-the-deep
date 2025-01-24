@@ -1,0 +1,147 @@
+\doxysection{Player\+Control Class Reference}
+\hypertarget{class_player_control}{}\label{class_player_control}\index{PlayerControl@{PlayerControl}}
+Inheritance diagram for Player\+Control\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_player_control}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{interface_player_control_1_1_i_player_actions}{IPlayer\+Actions}}
+\item 
+struct \mbox{\hyperlink{struct_player_control_1_1_player_actions}{Player\+Actions}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_player_control_a90ca231f43cb3c3d6dc774571dc81699}{Player\+Control}} ()
+\item 
+void \mbox{\hyperlink{class_player_control_abbb004747dd102ad239cfbf7b1d8ef04}{Dispose}} ()
+\item 
+bool \mbox{\hyperlink{class_player_control_a3168eaa180149c34270c22104d2d348e}{Contains}} (Input\+Action action)
+\item 
+IEnumerator$<$ Input\+Action $>$ \mbox{\hyperlink{class_player_control_aa9306ef67fdea848f77d362c0ed27f4a}{Get\+Enumerator}} ()
+\item 
+void \mbox{\hyperlink{class_player_control_a058dc91438558e8097991f43664b74e8}{Enable}} ()
+\item 
+void \mbox{\hyperlink{class_player_control_a41b70e96600bf33a555d805ef878fe5d}{Disable}} ()
+\item 
+Input\+Action \mbox{\hyperlink{class_player_control_a199948648c2ff69473c7bdfc4df7a07d}{Find\+Action}} (string action\+Name\+Or\+Id, bool throw\+If\+Not\+Found=false)
+\item 
+int \mbox{\hyperlink{class_player_control_a213a1ef0cbbeed475d5cf86cc44b6a2f}{Find\+Binding}} (Input\+Binding \mbox{\hyperlink{class_player_control_a84f555ad4235bf94c4174847ae4d32b2}{binding\+Mask}}, out Input\+Action action)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Input\+Action\+Asset \mbox{\hyperlink{class_player_control_abc75b3c81f0591264d8da9f8e60f677f}{asset}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+Input\+Binding? \mbox{\hyperlink{class_player_control_a84f555ad4235bf94c4174847ae4d32b2}{binding\+Mask}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+Read\+Only\+Array$<$ Input\+Device $>$? \mbox{\hyperlink{class_player_control_a45e399982f611fdf09e9d5085e305210}{devices}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+Read\+Only\+Array$<$ Input\+Control\+Scheme $>$ \mbox{\hyperlink{class_player_control_aa38e055a66b0c2051dfeaf506f37a673}{control\+Schemes}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+IEnumerable$<$ Input\+Binding $>$ \mbox{\hyperlink{class_player_control_a95a62646343e55beee1543f70cc53829}{bindings}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{struct_player_control_1_1_player_actions}{Player\+Actions}} \mbox{\hyperlink{class_player_control_a6a5741d1660cbf319930bc458da4cbd9}{Player}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_player_control_a90ca231f43cb3c3d6dc774571dc81699}\index{PlayerControl@{PlayerControl}!PlayerControl@{PlayerControl}}
+\index{PlayerControl@{PlayerControl}!PlayerControl@{PlayerControl}}
+\doxysubsubsection{\texorpdfstring{PlayerControl()}{PlayerControl()}}
+{\footnotesize\ttfamily \label{class_player_control_a90ca231f43cb3c3d6dc774571dc81699} 
+Player\+Control.\+Player\+Control (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_player_control_a3168eaa180149c34270c22104d2d348e}\index{PlayerControl@{PlayerControl}!Contains@{Contains}}
+\index{Contains@{Contains}!PlayerControl@{PlayerControl}}
+\doxysubsubsection{\texorpdfstring{Contains()}{Contains()}}
+{\footnotesize\ttfamily \label{class_player_control_a3168eaa180149c34270c22104d2d348e} 
+bool Player\+Control.\+Contains (\begin{DoxyParamCaption}\item[{Input\+Action}]{action}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_player_control_a41b70e96600bf33a555d805ef878fe5d}\index{PlayerControl@{PlayerControl}!Disable@{Disable}}
+\index{Disable@{Disable}!PlayerControl@{PlayerControl}}
+\doxysubsubsection{\texorpdfstring{Disable()}{Disable()}}
+{\footnotesize\ttfamily \label{class_player_control_a41b70e96600bf33a555d805ef878fe5d} 
+void Player\+Control.\+Disable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_player_control_abbb004747dd102ad239cfbf7b1d8ef04}\index{PlayerControl@{PlayerControl}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!PlayerControl@{PlayerControl}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily \label{class_player_control_abbb004747dd102ad239cfbf7b1d8ef04} 
+void Player\+Control.\+Dispose (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_player_control_a058dc91438558e8097991f43664b74e8}\index{PlayerControl@{PlayerControl}!Enable@{Enable}}
+\index{Enable@{Enable}!PlayerControl@{PlayerControl}}
+\doxysubsubsection{\texorpdfstring{Enable()}{Enable()}}
+{\footnotesize\ttfamily \label{class_player_control_a058dc91438558e8097991f43664b74e8} 
+void Player\+Control.\+Enable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_player_control_a199948648c2ff69473c7bdfc4df7a07d}\index{PlayerControl@{PlayerControl}!FindAction@{FindAction}}
+\index{FindAction@{FindAction}!PlayerControl@{PlayerControl}}
+\doxysubsubsection{\texorpdfstring{FindAction()}{FindAction()}}
+{\footnotesize\ttfamily \label{class_player_control_a199948648c2ff69473c7bdfc4df7a07d} 
+Input\+Action Player\+Control.\+Find\+Action (\begin{DoxyParamCaption}\item[{string}]{action\+Name\+Or\+Id}{, }\item[{bool}]{throw\+If\+Not\+Found}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+\Hypertarget{class_player_control_a213a1ef0cbbeed475d5cf86cc44b6a2f}\index{PlayerControl@{PlayerControl}!FindBinding@{FindBinding}}
+\index{FindBinding@{FindBinding}!PlayerControl@{PlayerControl}}
+\doxysubsubsection{\texorpdfstring{FindBinding()}{FindBinding()}}
+{\footnotesize\ttfamily \label{class_player_control_a213a1ef0cbbeed475d5cf86cc44b6a2f} 
+int Player\+Control.\+Find\+Binding (\begin{DoxyParamCaption}\item[{Input\+Binding}]{binding\+Mask}{, }\item[{out Input\+Action}]{action}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_player_control_aa9306ef67fdea848f77d362c0ed27f4a}\index{PlayerControl@{PlayerControl}!GetEnumerator@{GetEnumerator}}
+\index{GetEnumerator@{GetEnumerator}!PlayerControl@{PlayerControl}}
+\doxysubsubsection{\texorpdfstring{GetEnumerator()}{GetEnumerator()}}
+{\footnotesize\ttfamily \label{class_player_control_aa9306ef67fdea848f77d362c0ed27f4a} 
+IEnumerator$<$ Input\+Action $>$ Player\+Control.\+Get\+Enumerator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{class_player_control_abc75b3c81f0591264d8da9f8e60f677f}\index{PlayerControl@{PlayerControl}!asset@{asset}}
+\index{asset@{asset}!PlayerControl@{PlayerControl}}
+\doxysubsubsection{\texorpdfstring{asset}{asset}}
+{\footnotesize\ttfamily \label{class_player_control_abc75b3c81f0591264d8da9f8e60f677f} 
+Input\+Action\+Asset Player\+Control.\+asset\hspace{0.3cm}{\ttfamily [get]}}
+
+\Hypertarget{class_player_control_a84f555ad4235bf94c4174847ae4d32b2}\index{PlayerControl@{PlayerControl}!bindingMask@{bindingMask}}
+\index{bindingMask@{bindingMask}!PlayerControl@{PlayerControl}}
+\doxysubsubsection{\texorpdfstring{bindingMask}{bindingMask}}
+{\footnotesize\ttfamily \label{class_player_control_a84f555ad4235bf94c4174847ae4d32b2} 
+Input\+Binding? Player\+Control.\+binding\+Mask\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+\Hypertarget{class_player_control_a95a62646343e55beee1543f70cc53829}\index{PlayerControl@{PlayerControl}!bindings@{bindings}}
+\index{bindings@{bindings}!PlayerControl@{PlayerControl}}
+\doxysubsubsection{\texorpdfstring{bindings}{bindings}}
+{\footnotesize\ttfamily \label{class_player_control_a95a62646343e55beee1543f70cc53829} 
+IEnumerable$<$Input\+Binding$>$ Player\+Control.\+bindings\hspace{0.3cm}{\ttfamily [get]}}
+
+\Hypertarget{class_player_control_aa38e055a66b0c2051dfeaf506f37a673}\index{PlayerControl@{PlayerControl}!controlSchemes@{controlSchemes}}
+\index{controlSchemes@{controlSchemes}!PlayerControl@{PlayerControl}}
+\doxysubsubsection{\texorpdfstring{controlSchemes}{controlSchemes}}
+{\footnotesize\ttfamily \label{class_player_control_aa38e055a66b0c2051dfeaf506f37a673} 
+Read\+Only\+Array$<$Input\+Control\+Scheme$>$ Player\+Control.\+control\+Schemes\hspace{0.3cm}{\ttfamily [get]}}
+
+\Hypertarget{class_player_control_a45e399982f611fdf09e9d5085e305210}\index{PlayerControl@{PlayerControl}!devices@{devices}}
+\index{devices@{devices}!PlayerControl@{PlayerControl}}
+\doxysubsubsection{\texorpdfstring{devices}{devices}}
+{\footnotesize\ttfamily \label{class_player_control_a45e399982f611fdf09e9d5085e305210} 
+Read\+Only\+Array$<$Input\+Device$>$? Player\+Control.\+devices\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+\Hypertarget{class_player_control_a6a5741d1660cbf319930bc458da4cbd9}\index{PlayerControl@{PlayerControl}!Player@{Player}}
+\index{Player@{Player}!PlayerControl@{PlayerControl}}
+\doxysubsubsection{\texorpdfstring{Player}{Player}}
+{\footnotesize\ttfamily \label{class_player_control_a6a5741d1660cbf319930bc458da4cbd9} 
+\mbox{\hyperlink{struct_player_control_1_1_player_actions}{Player\+Actions}} Player\+Control.\+Player\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Player/\mbox{\hyperlink{_player_control_8cs}{Player\+Control.\+cs}}\end{DoxyCompactItemize}
