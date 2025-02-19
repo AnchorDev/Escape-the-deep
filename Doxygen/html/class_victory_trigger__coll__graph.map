@@ -1,8 +1,0 @@
-<map id="VictoryTrigger" name="VictoryTrigger">
-<area shape="rect" id="Node000001" title=" " alt="" coords="15,279,107,391"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,106,75"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,89,63,279,57,279,54,89"/>
-<area shape="rect" id="Node000003" href="$class_timer.html" title=" " alt="" coords="77,124,218,215"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="91,85,118,123,114,126,87,88"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="127,216,100,265,96,263,122,213"/>
-</map>

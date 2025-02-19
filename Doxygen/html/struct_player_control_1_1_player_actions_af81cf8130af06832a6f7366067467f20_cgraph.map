@@ -1,7 +1,0 @@
-<map id="PlayerControl.PlayerActions.AddCallbacks" name="PlayerControl.PlayerActions.AddCallbacks">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,195,81"/>
-<area shape="rect" id="Node000002" href="$interface_player_control_1_1_i_player_actions.html#ac45ed32c8b4a7c18db5b410ad8a8a2f0" title=" " alt="" coords="243,5,436,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,44,227,40,228,45,196,49"/>
-<area shape="rect" id="Node000003" href="$interface_player_control_1_1_i_player_actions.html#afd41c5eb390db23f5353f07643801ebb" title=" " alt="" coords="243,72,436,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="196,71,228,75,227,80,195,76"/>
-</map>

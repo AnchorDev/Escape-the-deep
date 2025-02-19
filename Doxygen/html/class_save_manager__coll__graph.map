@@ -1,8 +1,0 @@
-<map id="SaveManager" name="SaveManager">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,279,202,391"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="48,5,149,75"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,89,106,279,100,279,97,89"/>
-<area shape="rect" id="Node000003" href="$class_timer.html" title=" " alt="" coords="120,124,261,215"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="134,85,161,123,157,126,129,88"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,216,143,265,138,263,165,213"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="PlayerControl.PlayerControl" name="PlayerControl.PlayerControl">
-<area shape="rect" id="Node000001" title=" " alt="" coords="527,13,710,40"/>
-<area shape="rect" id="Node000002" href="$struct_player_control_1_1_player_actions.html#a744907f374a6fae820a79335f35a4029" title=" " alt="" coords="290,5,479,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="511,29,479,29,479,24,511,24"/>
-<area shape="rect" id="Node000003" href="$struct_player_control_1_1_player_actions.html#a5dfd04ec6b31c56fc0c478225f010805" title=" " alt="" coords="5,5,242,48"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="274,29,242,29,242,24,274,24"/>
-</map>
